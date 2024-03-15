@@ -282,7 +282,8 @@
                                                 <th style="text-align:center; "> Entry Date </th>
                                                 <th style="text-align:center; "> Income Expense </th>
                                                 <th style="text-align:center; "> Budget </th>
-                                                <th style="text-align:center; " style="min-width:'150px'"> Description </th>
+                                                <th style="text-align:center; " style="min-width:'150px'"> Description
+                                                </th>
 
                                                 <th style="text-align:center; "> Actions </th>
                                             </tr>
@@ -309,7 +310,8 @@
 
                                                 <td class="text-center">
                                                     <button type="button" class="btn btn-primary btn-xs"
-                                                        data-bs-toggle="modal" data-bs-target="#edit-invoice">Edit</button>
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#edit-invoice">Edit</button>
                                                     <button type="button" class="btn btn-danger btn-xs"
                                                         data-bs-toggle="modal" data-bs-target="#delete">Delete</button>
                                                 </td>
@@ -341,21 +343,33 @@
                                     <div class="col-lg-4 col-md-6  ms-auto mb-3 ">
                                         <div class="expens-total">
 
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div><h1>Income&nbsp;Expense</h1></div>
-                                           <div><h2>62573</h2></div>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div><h1 class="mb-0 pb-0">Budget</h1></div>
-                                           <div><h2 class="mb-0 pb-0">9288</h2></div>
-                                        </div>
-                                        <hr>
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div><h1 class="mb-0 pb-0">Total</h1></div>
-                                           <div><h2 class="mb-0 pb-0">718288</h2></div>
-                                        </div>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div>
+                                                    <h1>Income&nbsp;Expense</h1>
+                                                </div>
+                                                <div>
+                                                    <h2>62573</h2>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div>
+                                                    <h1 class="mb-0 pb-0">Budget</h1>
+                                                </div>
+                                                <div>
+                                                    <h2 class="mb-0 pb-0">9288</h2>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div>
+                                                    <h1 class="mb-0 pb-0">Total</h1>
+                                                </div>
+                                                <div>
+                                                    <h2 class="mb-0 pb-0">718288</h2>
+                                                </div>
+                                            </div>
 
-                                    </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
@@ -464,53 +478,53 @@
         </div>
     </div>
 
-  <!--add invoice Modal -->
-  <div class="modal fade" id="edit-invoice" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog  modal-lg modal-dialog-centered ">
-      <div class="modal-content">
-          <div class="modal-header modal-header-style">
-              <h5 class="modal-title mb-3 text-white" id="staticBackdropLabel">Edit  Expence
-              </h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <form action="">
-              <div class="modal-body">
-                  <div class="container-fluid">
-                      <div class="row">
-                          <div class="col-lg-4 mb-3">
-                              <label class="control-label ">Entry&nbsp;Date</label>
-                              <input type="date" class="form-control">
+    <!--add invoice Modal -->
+    <div class="modal fade" id="edit-invoice" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-lg modal-dialog-centered ">
+            <div class="modal-content">
+                <div class="modal-header modal-header-style">
+                    <h5 class="modal-title mb-3 text-white" id="staticBackdropLabel">Edit Expence
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="">
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-4 mb-3">
+                                    <label class="control-label ">Entry&nbsp;Date</label>
+                                    <input type="date" class="form-control">
 
-                          </div>
+                                </div>
 
-                          <div class="col-lg-4 mb-3">
-                              <label class="control-label ">Income Expense </label>
-                              <input type="text" class="form-control name" placeholder="Income Expense">
-                          </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="control-label ">Income Expense </label>
+                                    <input type="text" class="form-control name" placeholder="Income Expense">
+                                </div>
 
-                          <div class="col-lg-4 mb-3">
-                              <label class="control-label">Budget </label>
-                              <input type="text" class="form-control name">
-                          </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="control-label">Budget </label>
+                                    <input type="text" class="form-control name">
+                                </div>
 
-                          <div class="col-lg-12 mb-3">
-                              <label class="control-label">Description</label><br>
-                              <!-- <textarea  rows="5"  width="100"> -->
-                              <textarea name="" id="" style="width: 100%;" class="form-control"
-                                  rows="5"></textarea>
-                          </div>
-                      </div>
+                                <div class="col-lg-12 mb-3">
+                                    <label class="control-label">Description</label><br>
+                                    <!-- <textarea  rows="5"  width="100"> -->
+                                    <textarea name="" id="" style="width: 100%;" class="form-control"
+                                        rows="5"></textarea>
+                                </div>
+                            </div>
 
-                  </div>
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-success w-50 mx-auto">Submit</button>
-              </div>
-          </form>
-      </div>
-  </div>
-</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success w-50 mx-auto">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
     <!--Delete Modal -->
@@ -631,31 +645,31 @@
 
 
 
-<script>
-    // document.getElementById("defaultOpen").click();
-    $(document).ready(function () {
-        // Click event for tab buttons
-        $(".tablinks").click(function () {
-            var tabName = $(this).data("tab");
+    <script>
+        // document.getElementById("defaultOpen").click();
+        $(document).ready(function () {
+            // Click event for tab buttons
+            $(".tablinks").click(function () {
+                var tabName = $(this).data("tab");
 
-            // Remove the "active" class from all tab buttons
-            $(".tablinks").removeClass("active");
+                // Remove the "active" class from all tab buttons
+                $(".tablinks").removeClass("active");
 
-            // Hide all tab content
-            $(".tabcontent").hide();
+                // Hide all tab content
+                $(".tabcontent").hide();
 
-            // Show the selected tab content
-            $("#" + tabName).show();
+                // Show the selected tab content
+                $("#" + tabName).show();
 
-            // Add the "active" class to the clicked tab button
-            $(this).addClass("active");
+                // Add the "active" class to the clicked tab button
+                $(this).addClass("active");
+            });
+
+            // Trigger the default tab to open
+            $("#defaultOpen").click();
         });
-
-        // Trigger the default tab to open
-        $("#defaultOpen").click();
-    });
-    document.getElementById("defaultOpen").click();
-</script>
+        document.getElementById("defaultOpen").click();
+    </script>
 
 
 
