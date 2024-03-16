@@ -51,7 +51,7 @@
                                     </div>
 
                                 </div>
-                                </div>
+                                
 
 <div class="card  pb-4 px-lg-4 px-2 mt-3">
     <!-- <h5 class="card-header px-0 bg-white border-bottom-0  py-3 mb-2">All Appointments</h5> -->
@@ -60,13 +60,15 @@
                                     <h5 class="card-header px-0 bg-white border-bottom-0 py-0   mb-md-2 mb-3">
                                         Appointments</h5>
                                     <div class=" w-auto mb-2 d-flex align-items-center">
-                                        <select class="form-select form-select-md w-100" style="min-width: 160px;">
+                                        <form action="" wire:submit="datesearch" wire:ignore.self></form>
+                                        <select class="form-select form-select-md w-100" wire:model="datesearchs" style="min-width: 160px;">
                                             <option selected>Select Date</option>
-                                            <option value="">12/5/20224</option>
-                                            <option value="">11/5/2024</option>
-                                            <option value="">10/5/2024</option>
+                                            <option value="13/3/2024">13/3/2024</option>
+                                            <option value="11/5/2024">11/5/2024</option>
+                                            <option value="10/5/2024">10/5/2024</option>
                                         </select>
-                                        <button class="btn btn-primary ms-3">Search</button>
+                                        <button class="btn btn-primary ms-3" wire:click="datesearch">Search</button>
+                                    </form>
                                     </div>
 
                                 </div>

@@ -14,6 +14,8 @@ class Index extends Component
     public $item_id;
     public $updateMode = false;
     public $search = '';
+    public $datesearchs;
+
 
     protected $listeners = ['destroy'];
 
@@ -69,6 +71,10 @@ public function updateRecord($item_id)
     ]);
 
 }
+
+public function datesearch(){
+    
+}
     public function render()
     {
         $query = registerformmodel::query();
@@ -83,6 +89,10 @@ public function updateRecord($item_id)
                   ->orWhere('Interested_Country', 'like', '%'.$this->search.'%')
                   ->orWhere('Date', 'like', '%'.$this->search.'%');
             });
+        }
+        if ($this->datesearchs) {
+            $query->Where('Date',  $this->datesearchs);
+
         }
     $students =$query->where('status','Pending')->orderBy('id', 'DESC')->get();
         $today = Carbon::now()->toDateString();

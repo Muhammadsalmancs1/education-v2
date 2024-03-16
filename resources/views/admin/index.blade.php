@@ -116,7 +116,7 @@ Cas/T20
                                     <div class=" dashboard-btn  mb-3 d-flex justify-content-between align-items-center "
                                         style=" color:white !important; background-color: #000000 !important">
                                         <div>
-                                            <a href="" class="text-white">
+                                            <a href="{{route('studentlists','')}}" class="text-white">
                                                 Closed Student
                                             </a>
                                         </div>
