@@ -73,7 +73,7 @@ public function updateRecord($item_id)
 }
 
 public function datesearch(){
-    
+    $this->datesearchs = '';
 }
     public function render()
     {

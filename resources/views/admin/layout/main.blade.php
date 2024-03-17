@@ -2,7 +2,7 @@
 
 <html lang="en" class="light-style layout-menu-fixed layout-compact" dir="ltr" data-theme="theme-default"
     data-assets-path="../assets/" data-template="vertical-menu-template-free">
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+    <!-- <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script> -->
 
 
 <head>
@@ -16,7 +16,7 @@
 
     <!-- Favicon -->
     <!-- <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" /> -->
-
+    <link rel="stylesheet" href="{{asset('../admin/assets/img/Fav/Fav.png')}}" />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,8 +40,8 @@
     <!-- Helpers -->
     <script src="{{asset('../admin/assets/vendor/js/helpers.js')}}"></script>
     <script src="{{asset('../admin/assets/js/config.js')}}"></script>
-
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
 
     <!-- Add this to your main layout or component -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -95,16 +95,19 @@
         <script async defer src="https://buttons.github.io/buttons.js"></script>
         <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
         <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
         <script src="{{asset('./admin/assets/Js/table.js')}}"></script>
         <script src="{{asset('./admin/assets/Js/calendar-full.js')}}"></script>
         <script>
             $("#view").on("shown.bs.modal", function () {
-                $('#select2').select2({
-                    dropdownParent: $('#view .modal-content form .modal-body .container .row .col-lg-6')
+console.log("view")
+setTimeout(function() {
+    $('#select2').select2({
+                    dropdownParent: $('#view .modal-dialog .modal-content form .modal-body .container .row .col-lg-6')
                 });
+}, 1000)
                 // $.fn.modal.Constructor.prototype.enforceFocus = function() {};
             })
 

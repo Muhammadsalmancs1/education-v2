@@ -10,7 +10,7 @@
                 <button class="tablinks {{ $activeTab === 'Cas/T20' ? 'active' : '' }}" data-tab="sm" wire:click="search('Cas/T20')">Cas/T20</button>
                 <button class="tablinks {{ $activeTab === 'Visa' ? 'active' : '' }}" data-tab="sm" wire:click="search('Visa')">Visa</button>
                 <button class="tablinks {{ $activeTab === 'Visa Accepted' ? 'active' : '' }}" data-tab="sm" wire:click="search('Visa Accepted')">Visa Accepted</button>
-                <button class="tablinks " data-tab="sm" wire:click="search('')">Close</button>
+                <button class="tablinks {{ $activeTab === 'Close' ? 'active' : '' }}" data-tab="sm" wire:click="search('Close')">Close</button>
             </div>
 
         </div>
@@ -121,12 +121,12 @@
                                                 style="min-width: 180px !important;"
                                                 wire:model="statusChanges.{{ $item->id }}">
                                                 <!--<option  disabled></option>-->
-                                                <option value="{{ $item->Status }}">{{ $item->Status }}</option>
+                                                <option value="{{ $item->Status}}">{{ $item->Status }}</option>
                                                 <option value="Inquiry">
                                                     Inquiry </option>
                                                 <option value="In Progress">
                                                     In Progress </option>
-                                                <option value="Cas/T20" selected="">
+                                                <option value="Cas/T20">
                                                     Cas/T20</option>
                                                 <option value="Visa Accepted">
                                                     Visa Acptd </option>
@@ -134,6 +134,9 @@
                                                     Visa Rfsd</option>
                                                 <option value="Paid">
                                                     Paid Student
+                                                </option>
+                                                <option value="Close">
+                                                    Close
                                                 </option>
 
 
@@ -342,23 +345,12 @@
                                         <label class="control-label mb-2 mt-2 col-sm-10 ">Interested Country <span
                                                 class="text-danger">*</span></label>
                                         <select class="js-sm-table-basic-multiple w-100 form-select" id="select2"
-                                            name="states[]" multiple="multiple">
-                                            <option value="AS">
-                                                AUSTRALIA </option>
-                                            <option value="CN">
-                                                CANADA </option>
-                                            <option value="ML">
-                                                MALAYSIA </option>
-                                            <option value="PK">
-                                                PAKISTAN </option>
-                                            <option value="TK">
-                                                TURKEY </option>
-                                            <option value="UAE">
-                                                UAE </option>
-                                            <option value="UK">
-                                                UK </option>
-                                            <option value="USA">
-                                                USA </option>
+                                            name="states[]" multiple="multiple" wire:model="interested_country">
+                                            @foreach ($coun as $item)
+                                            <option value="{{ $item->country }}">
+                                                {{ $item->country }}
+                                            </option>
+                                        @endforeach
                                         </select>
                                     </div>
                             <!-- <div class="col-lg-6 mb-3">

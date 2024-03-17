@@ -1,8 +1,8 @@
 <div>
     <div class="tab mb-3">
         <div class="tab-scroll">
-            <button class="tablinks" data-tab="AC"  wire:click="assigntable">Assign Counselor </button>
-            <button class="tablinks" data-tab="AC" wire:click="assignedtable">Assigned Counselor</button>
+            <button class="tablinks @if ($activeTab == 'unassigned') active @endif" data-tab="AC"  wire:click="assigntable">Assign Counselor </button>
+            <button class="tablinks @if ($activeTab == 'assigned') active @endif" data-tab="AC" wire:click="assignedtable">Assigned Counselor</button>
 
         </div>
 

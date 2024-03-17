@@ -17,6 +17,8 @@ class AssignCounselors extends Component
     public $search = '';
     public $assignupdate = [];
     public $students = [];
+
+    public $activeTab = 'unassigned';
     public function counselorasign(){
    
         foreach ($this->students as $student) {
@@ -35,11 +37,13 @@ class AssignCounselors extends Component
     public function assignedtable(){
         $this->showAssignedCounselor = true;
         $this->assigncounselors = false;
+        $this->activeTab = 'assigned';
 
     }
     public function assigntable(){
         $this->showAssignedCounselor = false;
         $this->assigncounselors = true;
+        $this->activeTab = 'unassigned';
 
     }
 
@@ -72,7 +76,7 @@ class AssignCounselors extends Component
                   ->orWhere('Date', 'like', '%'.$this->search.'%');
             });
         }
-        $show = $query->orderBy('id', 'DESC')->get();
+        $show = $query->where('Status', '!=','Pending')->orderBy('id', 'DESC')->get();
         $assigned = registerformmodel::where('Counselor','!=',Null)->get();
         $counse = manageusermodel::where('role','Counselor')->get();
         return view('livewire.transection.assign-counselors',compact('show','assigned','counse'));

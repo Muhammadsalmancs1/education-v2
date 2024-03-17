@@ -8,6 +8,7 @@
 
     <ul class="menu-inner py-1">
         <!-- Dashboards -->
+        @can('Dashboards')
         <li class="menu-item {{ Route::currentRouteName() == 'index' ? 'active' : '' }}">
             <a href="{{route('index')}}" class="menu-link ">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
@@ -15,7 +16,7 @@
             </a>
 
         </li>
-
+        @endcan
         <!-- registration -->
         <li class="menu-item {{ Route::currentRouteName() == 'students_management' || Route::currentRouteName() == 'bookingleave_date' || Route::currentRouteName() == 'listing_counselor' || Route::currentRouteName() == 'country' || Route::currentRouteName() == 'agents' || Route::currentRouteName() == 'reference' || Route::currentRouteName() == 'sessions' || Route::currentRouteName() == 'subagent' ||Route::currentRouteName() == 'university' ? 'active open' : '' }}">
             <a href="javascript:void(0)" class="menu-link menu-toggle">
@@ -146,7 +147,7 @@
 
        <!-- Expense -->
         <li class="menu-item">
-            <a href="" class="menu-link ">
+            <a href="{{route('expense')}}" class="menu-link ">
                 <i class="menu-icon tf-icons bx bx bx-copy"></i>
                Expense
             </a>

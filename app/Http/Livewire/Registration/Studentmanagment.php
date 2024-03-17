@@ -13,6 +13,7 @@ use App\Models\registration\universitymodel;
 use App\Models\usermanage\manageusermodel;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Illuminate\Support\Facades\Auth;
 
 class Studentmanagment extends Component
 {
@@ -93,7 +94,7 @@ class Studentmanagment extends Component
         $this->qualification3 = $result->Qualification_3;
         $this->grade3 = $result->Grade_3;
         $this->education_country = $result->Education_country;
-        $this->interested_country = $result->Interested_Country;
+        $this->interested_country =$result->interested_country;
         $this->session_looking = $result->Session_Looking;
         $this->year = $result->Year;
         $this->courses = $result->Courses;
@@ -395,7 +396,13 @@ class Studentmanagment extends Component
         if ($this->search == "Visa Accepted") {
             $query->where('status', 'Visa Accepted');
         }
-        $show = $query->orderBy('id', 'DESC')->with('unilist','followuplists')->paginate(10);
+        if ($this->search == "Close") {
+            $query->where('status', 'Close');
+        }
+        if (Auth::user()->role == "Counselor") {
+            $query->where('Counselor', Auth::user()->name);
+        }
+        $show = $query->where('Status', '!=', 'Pending')->orderBy('id', 'DESC')->with('unilist','followuplists')->paginate(10);
         $referal = referencemodel::get();
         $session = sessionmodel::get();
         $counselor = manageusermodel::where('role', 'Counselor')->get();

@@ -62,6 +62,7 @@ Route::get('roles', [RoleController::class, 'index'])->name('roles');
 Route::get('studentlists/{mainsearch?}', [admincontroller::class, 'mainsearch'])->name('studentlists');
 
 
+Route::get('expense', [admincontroller::class, 'expenses'])->name('expense');
 
 });
 

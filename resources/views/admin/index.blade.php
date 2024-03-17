@@ -11,17 +11,18 @@
                     <div class="container-xxl flex-grow-1 container-p-y">
                         <!-- <h4 class="pt-3 pb-2">Student Management</h4> -->
 
-
                         <div class="tab mb-3">
                             <div class="tab-scroll">
+                                @can('Dashboards')
                                 <button class="tablinks" data-tab="SD" id="defaultOpen">Student
                                     Data</button>
                                 <button class="tablinks" data-tab="Appointments">Appointments</button>
+                                @endcan
                             </div>
 
                         </div>
-
                         <div id="SD" class="tabcontent">
+                            @can('Dashboards')
                             <div class="row">
                                 <!-- <div class="col-lg-4">
                                     <div class=" dashboard-btn  mb-3 d-flex justify-content-between align-items-center "
@@ -116,7 +117,7 @@ Cas/T20
                                     <div class=" dashboard-btn  mb-3 d-flex justify-content-between align-items-center "
                                         style=" color:white !important; background-color: #000000 !important">
                                         <div>
-                                            <a href="{{route('studentlists','')}}" class="text-white">
+                                            <a href="{{route('studentlists','Close')}}" class="text-white">
                                                 Closed Student
                                             </a>
                                         </div>
@@ -124,6 +125,7 @@ Cas/T20
                                     </div>
                                 </div>
                             </div>
+                            @endcan
                             <!-- Striped Rows -->
                             <div class="card  pb-4 px-lg-4 px-2">
                                 <h5 class="card-header px-0 bg-white border-bottom-0  py-3 mb-2">New Leads</h5>
@@ -146,78 +148,28 @@ Cas/T20
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach ($inquiry as $key => $item)
                                             <tr class="">
 
-                                                <td class="">1</td>
+                                                <td class="">{{$key+1}}</td>
 
 
-                                                <td class=""> Daniyal Adnan</td>
+                                                <td class="">{{$item->Student_name}}</td>
 
 
-                                                <td class=""> 03208242965</td>
+                                                <td class="">{{$item->Student_contact}}</td>
 
 
-                                                <td class=""> JANUARY- MARCH 2022</td>
+                                                <td class=""> {{$item->Session_Looking}}</td>
 
-                                                <td class=""> abc@gmail.com</td>
+                                                <td class="">{{$item->Student_email}}</td>
 
 
 
                                             </tr>
-                                            <tr class="">
-
-                                                <td class="">1</td>
-
-
-                                                <td class=""> Daniyal Adnan</td>
-
-
-                                                <td class=""> 03208242965</td>
-
-
-                                                <td class=""> JANUARY- MARCH 2022</td>
-
-                                                <td class=""> abc@gmail.com</td>
-
-
-
-                                            </tr>
-                                            <tr class="">
-
-                                                <td class="">1</td>
-
-
-                                                <td class=""> Daniyal Adnan</td>
-
-
-                                                <td class=""> 03208242965</td>
-
-
-                                                <td class=""> JANUARY- MARCH 2022</td>
-
-                                                <td class=""> abc@gmail.com</td>
-
-
-
-                                            </tr>
-                                            <tr class="">
-
-                                                <td class="">1</td>
-
-
-                                                <td class=""> Daniyal Adnan</td>
-
-
-                                                <td class=""> 03208242965</td>
-
-
-                                                <td class=""> JANUARY- MARCH 2022</td>
-
-                                                <td class=""> abc@gmail.com</td>
-
-
-
-                                            </tr>
+                                            @endforeach
+                                           
+                                          
                                         </tbody>
                                     </table>
                                 </div>
@@ -225,7 +177,7 @@ Cas/T20
                             <!--/ Striped Rows -->
 
                         </div>
-
+                        @can('Dashboards')
                         <div id="Appointments" class="tabcontent">
                         <div class="card  pb-4 px-lg-4 px-2 mb-3">
                                 <div class="d-flex justify-content-between align-items-center">
@@ -240,6 +192,8 @@ Cas/T20
                                 </div>
 
                             </div>
+                           
                                 <livewire:index />
-                        </div>
+                            </div>
+                            @endcan
     @endsection
