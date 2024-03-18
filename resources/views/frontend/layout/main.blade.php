@@ -11,7 +11,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         
-        <link rel="stylesheet" href="{{asset('../admin/assets/img/Fav/Fav.png')}}" />
+        <link rel="icon" type="image/png" href="{{ asset('../admin/assets/img/Fav/Fav.png') }}" />
 
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <!-- poppins -->

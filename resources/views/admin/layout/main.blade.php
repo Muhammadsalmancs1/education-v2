@@ -16,7 +16,8 @@
 
     <!-- Favicon -->
     <!-- <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" /> -->
-    <link rel="stylesheet" href="{{asset('../admin/assets/img/Fav/Fav.png')}}" />
+    <link rel="icon" type="image/png" href="{{ asset('../admin/assets/img/Fav/Fav.png') }}" />
+    {{-- <link rel="shortcut icon" href="{{ asset('favicon-16x16.ico') }}" type="image/vnd.microsoft.icon"> --}}
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

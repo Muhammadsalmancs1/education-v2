@@ -51,7 +51,7 @@ class Studentmanagment extends Component
     public $qualification3;
     public $grade3;
     public $education_country;
-    public $interested_country;
+    public $interested_country = [];
     public $session_looking;
     public $year;
     public $courses;
@@ -94,7 +94,12 @@ class Studentmanagment extends Component
         $this->qualification3 = $result->Qualification_3;
         $this->grade3 = $result->Grade_3;
         $this->education_country = $result->Education_country;
-        $this->interested_country =$result->interested_country;
+        $interested_countries = explode(',', $result->Interested_Country);
+        foreach($interested_countries as $country){
+
+            $interested_countrys = $country;
+        }
+        $this->interested_country = $interested_countrys;
         $this->session_looking = $result->Session_Looking;
         $this->year = $result->Year;
         $this->courses = $result->Courses;
@@ -105,6 +110,7 @@ class Studentmanagment extends Component
 
     public function updateregistrationform()
     {
+        $interested_countryall = implode(',', $this->interested_country);
         $store = registerformmodel::find($this->itemid);
         $store->Student_name = $this->name;
         $store->Student_email = $this->email;
@@ -117,7 +123,7 @@ class Studentmanagment extends Component
         $store->Qualification_3 = $this->qualification3;
         $store->Grade_3 = $this->grade3;
         $store->Education_country = $this->education_country;
-        $store->Interested_Country = $this->interested_country;
+        $store->Interested_Country = $interested_countryall;
         $store->Session_Looking = $this->session_looking;
         $store->Year = $this->year;
         $store->Courses = $this->courses;

@@ -10,6 +10,7 @@
     <title>Student Management</title>
 
     <meta name="description" content="" />
+    <link rel="icon" type="image/png" href="{{ asset('../admin/assets/img/Fav/Fav.png') }}" />
 
     <!-- Favicon -->
     <!-- <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" /> -->
